@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class Login extends StatelessWidget {
   const Login({super.key});
@@ -10,7 +11,7 @@ class Login extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.all(8),
           child: ConstrainedBox(
-            constraints: BoxConstraints(maxWidth: 300),
+            constraints: BoxConstraints(maxWidth: 313),
             child: Column(
               children: [
                 Text("Welcome back"),
@@ -26,6 +27,8 @@ class Login extends StatelessWidget {
                   ],
                 ),
                 Container(
+                  height: 48,
+                  width: 313,
                   decoration: BoxDecoration(
                     border: Border.all(color: Colors.black),
                   ),
@@ -46,6 +49,8 @@ class Login extends StatelessWidget {
                   ],
                 ),
                 Container(
+                  width: 313,
+                  height: 48,
                   decoration: BoxDecoration(
                     border: Border.all(color: Colors.black),
                   ),
@@ -72,6 +77,10 @@ class Login extends StatelessWidget {
                   },
                   child: Text('Login'),
                   style: ElevatedButton.styleFrom(
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(2),
+                    ),
+                    minimumSize: Size(313, 48),
                     backgroundColor: Colors.blue,
                     foregroundColor: Colors.white,
                   ),
@@ -91,16 +100,26 @@ class Login extends StatelessWidget {
                 ElevatedButton.icon(
                   onPressed: () {},
                   label: Text("Continue with Google"),
+                  icon: SvgPicture.asset('assets/icons/Google.svg'),
                   style: ElevatedButton.styleFrom(
+                    minimumSize: Size(313, 48),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(2),
+                    ),
                     foregroundColor: Colors.black,
                     backgroundColor: Colors.white,
                   ),
                 ),
                 // Button for user to continue with facebook
                 ElevatedButton.icon(
+                  icon: SvgPicture.asset('assets/icons/Facebook_icon.svg'),
                   onPressed: () {},
                   label: Text("Continue with Facebook"),
                   style: ElevatedButton.styleFrom(
+                    minimumSize: Size(313, 48),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(2),
+                    ),
                     foregroundColor: Colors.black,
                     backgroundColor: Colors.white,
                   ),
@@ -108,8 +127,13 @@ class Login extends StatelessWidget {
                 // Button for user to continue with facebook
                 ElevatedButton.icon(
                   onPressed: () {},
+                  icon: SvgPicture.asset('assets/icons/apple_icon.svg'),
                   label: Text("Continue with Apple"),
                   style: ElevatedButton.styleFrom(
+                    minimumSize: Size(313, 48),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(2),
+                    ),
                     foregroundColor: Colors.black,
                     backgroundColor: Colors.white,
                   ),
