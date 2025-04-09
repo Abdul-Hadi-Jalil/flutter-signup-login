@@ -14,7 +14,14 @@ class Login extends StatelessWidget {
             constraints: BoxConstraints(maxWidth: 313),
             child: Column(
               children: [
-                Text("Welcome back"),
+                Text(
+                  "Welcome back",
+                  style: TextStyle(
+                    fontSize: 24,
+                    fontFamily: 'inter',
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
                 Row(
                   children: [
                     Text("Email"),
@@ -66,7 +73,7 @@ class Login extends StatelessWidget {
                     alignment: Alignment.centerLeft,
                     child: Text(
                       'Forgot password?',
-                      style: TextStyle(color: Colors.blue),
+                      style: TextStyle(color: Color(0xff076EC8), fontSize: 10),
                     ),
                   ),
                 ),
@@ -77,11 +84,12 @@ class Login extends StatelessWidget {
                   },
                   child: Text('Login'),
                   style: ElevatedButton.styleFrom(
+                    side: BorderSide(color: Colors.black),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(2),
                     ),
                     minimumSize: Size(313, 48),
-                    backgroundColor: Colors.blue,
+                    backgroundColor: Color(0xff1b4bdb),
                     foregroundColor: Colors.white,
                   ),
                 ),
@@ -102,6 +110,7 @@ class Login extends StatelessWidget {
                   label: Text("Continue with Google"),
                   icon: SvgPicture.asset('assets/icons/Google.svg'),
                   style: ElevatedButton.styleFrom(
+                    side: BorderSide(color: Colors.black),
                     minimumSize: Size(313, 48),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(2),
@@ -116,6 +125,7 @@ class Login extends StatelessWidget {
                   onPressed: () {},
                   label: Text("Continue with Facebook"),
                   style: ElevatedButton.styleFrom(
+                    side: BorderSide(color: Colors.black),
                     minimumSize: Size(313, 48),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(2),
@@ -130,6 +140,7 @@ class Login extends StatelessWidget {
                   icon: SvgPicture.asset('assets/icons/apple_icon.svg'),
                   label: Text("Continue with Apple"),
                   style: ElevatedButton.styleFrom(
+                    side: BorderSide(color: Colors.black),
                     minimumSize: Size(313, 48),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(2),
@@ -149,7 +160,7 @@ class Login extends StatelessWidget {
                         onTap: () {},
                         child: Text(
                           'Signup',
-                          style: TextStyle(color: Colors.blue),
+                          style: TextStyle(color: Color(0xff161E8F)),
                         ),
                       ),
                     ),
