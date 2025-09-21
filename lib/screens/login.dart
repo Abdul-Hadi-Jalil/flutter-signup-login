@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/screens/signup.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class Login extends StatelessWidget {
@@ -7,6 +8,7 @@ class Login extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       body: Center(
         child: Padding(
           padding: const EdgeInsets.all(8),
@@ -22,7 +24,9 @@ class Login extends StatelessWidget {
                     fontWeight: FontWeight.bold,
                   ),
                 ),
+                SizedBox(height: 38),
                 Row(
+                  spacing: 5,
                   children: [
                     Text("Email"),
                     Text(
@@ -33,6 +37,7 @@ class Login extends StatelessWidget {
                     ),
                   ],
                 ),
+                SizedBox(height: 13),
                 Container(
                   height: 48,
                   width: 313,
@@ -44,7 +49,9 @@ class Login extends StatelessWidget {
                     decoration: InputDecoration(border: InputBorder.none),
                   ),
                 ),
+                SizedBox(height: 22),
                 Row(
+                  spacing: 5,
                   children: [
                     Text("Password"),
                     Text(
@@ -55,6 +62,7 @@ class Login extends StatelessWidget {
                     ),
                   ],
                 ),
+                SizedBox(height: 13),
                 Container(
                   width: 313,
                   height: 48,
@@ -65,6 +73,7 @@ class Login extends StatelessWidget {
                     decoration: InputDecoration(border: InputBorder.none),
                   ),
                 ),
+                SizedBox(height: 13),
                 InkWell(
                   onTap: () {
                     print('it is pressed');
@@ -77,12 +86,12 @@ class Login extends StatelessWidget {
                     ),
                   ),
                 ),
+                SizedBox(height: 52),
                 // Login button for user to login to the app
                 ElevatedButton(
                   onPressed: () {
                     print("Login button is pressed");
                   },
-                  child: Text('Login'),
                   style: ElevatedButton.styleFrom(
                     side: BorderSide(color: Colors.black),
                     shape: RoundedRectangleBorder(
@@ -92,7 +101,9 @@ class Login extends StatelessWidget {
                     backgroundColor: Color(0xff1b4bdb),
                     foregroundColor: Colors.white,
                   ),
+                  child: Text('Login'),
                 ),
+                SizedBox(height: 22),
                 // a separator line with written or and again a line
                 Row(
                   children: [
@@ -104,11 +115,23 @@ class Login extends StatelessWidget {
                     Expanded(child: Divider()),
                   ],
                 ),
+                SizedBox(height: 22),
                 // the button for user to select sign in with google
+                InkWell(
+                  onTap: () {},
+                  child: Container(decoration: BoxDecoration(), child: Row()),
+                ),
                 ElevatedButton.icon(
                   onPressed: () {},
-                  label: Text("Continue with Google"),
+                  label: Row(
+                    children: [
+                      Spacer(flex: 1),
+                      Text("Continue with Google"),
+                      Spacer(flex: 2),
+                    ],
+                  ),
                   icon: SvgPicture.asset('assets/icons/Google.svg'),
+
                   style: ElevatedButton.styleFrom(
                     side: BorderSide(color: Colors.black),
                     minimumSize: Size(313, 48),
@@ -119,11 +142,10 @@ class Login extends StatelessWidget {
                     backgroundColor: Colors.white,
                   ),
                 ),
+                SizedBox(height: 20),
                 // Button for user to continue with facebook
-                ElevatedButton.icon(
-                  icon: SvgPicture.asset('assets/icons/Facebook_icon.svg'),
+                ElevatedButton(
                   onPressed: () {},
-                  label: Text("Continue with Facebook"),
                   style: ElevatedButton.styleFrom(
                     side: BorderSide(color: Colors.black),
                     minimumSize: Size(313, 48),
@@ -132,13 +154,37 @@ class Login extends StatelessWidget {
                     ),
                     foregroundColor: Colors.black,
                     backgroundColor: Colors.white,
+                    padding: EdgeInsets.zero, // Ensures no extra padding
+                  ),
+                  child: Stack(
+                    alignment: Alignment.center,
+                    children: [
+                      Align(
+                        alignment: Alignment.centerLeft,
+                        child: Padding(
+                          padding: EdgeInsets.only(left: 12),
+                          child: SvgPicture.asset(
+                            'assets/icons/Facebook_icon.svg',
+                          ),
+                        ),
+                      ),
+                      Center(child: Text("Continue with Facebook")),
+                    ],
                   ),
                 ),
+
+                SizedBox(height: 20),
                 // Button for user to continue with facebook
                 ElevatedButton.icon(
                   onPressed: () {},
                   icon: SvgPicture.asset('assets/icons/apple_icon.svg'),
-                  label: Text("Continue with Apple"),
+                  label: Row(
+                    children: [
+                      Spacer(flex: 1),
+                      Text("Continue with Apple"),
+                      Spacer(flex: 2),
+                    ],
+                  ),
                   style: ElevatedButton.styleFrom(
                     side: BorderSide(color: Colors.black),
                     minimumSize: Size(313, 48),
@@ -149,6 +195,7 @@ class Login extends StatelessWidget {
                     backgroundColor: Colors.white,
                   ),
                 ),
+                SizedBox(height: 38),
                 // Last text if user wants to signup instead of login
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -157,7 +204,12 @@ class Login extends StatelessWidget {
                     Padding(
                       padding: const EdgeInsets.only(left: 8.0),
                       child: InkWell(
-                        onTap: () {},
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => Signup()),
+                          );
+                        },
                         child: Text(
                           'Signup',
                           style: TextStyle(color: Color(0xff161E8F)),

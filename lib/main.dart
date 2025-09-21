@@ -14,11 +14,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Login/Signup app',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(
-          seedColor: const Color.fromARGB(255, 255, 255, 255),
-        ),
-      ),
+      theme: ThemeData(primaryColor: Colors.white),
       home: const Login(),
     );
   }
